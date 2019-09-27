@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  display: flex;
 }
 
 .App-logo {
@@ -8,7 +9,9 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 50%;
+  width: 40vw;
+  margin-right: 30px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,6 +20,35 @@
   color: white;
 }
 
+.App-body {
+  justify-content: center;
+  align-items: center;
+  width: 60vw;
+  display: flex;
+  flex-direction: column
+}
+
 .App-link {
   color: #09d3ac;
+}
+
+.simple-form {
+  margin-top: 20px;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.box {
+  margin: 3px 0;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 6px
 }
