@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt')
 const auth = require('./auth');
 const User = require('./loginModel')
 
-const createUser = (req, res) => {
+export function createUser(req, res) {
     const {password, username, email} = req.body;
     bcrypt.hash(password, 10, (err, hash) => {
         const password = hash
@@ -31,13 +31,14 @@ const createUser = (req, res) => {
             
             return user.save().then(newUser => {
                 const Auth = auth(newUser)
-                res.send(
+                return res.json({
                     newUser,
                     Auth
-                )
+                })
             }).catch(() => console.log("failed"))
         })
     // })
 }
 
-module.exports = createUser;
+// module.exports = createUser;
+export default createUser

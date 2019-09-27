@@ -1,8 +1,8 @@
-const express = require('express');
+import express from 'express';
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const logger = require('morgan')
-// const loginController = require('./loginController')
+// const loginController  = require('./loginController')
 const Routes = require('./indexRoute')
 
 const app = express();
@@ -27,9 +27,8 @@ app.post('/newPost', (req, res) => {
     res.status(201).send(`Got this for you, ${req.body.newPost}`)
 })
 
-// app.post('/login', loginController.createUser)
 
-app.use('/', Routes)
+app.use('/api/', Routes)
 app.listen(port, () => {
     console.log(`connected, ${port}`)
 })
